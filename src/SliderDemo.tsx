@@ -21,7 +21,6 @@ export default class SliderDemo extends Component {
         <Grid.Column as={Form}>
           <Image src={`${pig_path}/label_recon.png`} alt={pig} centered/>
           <Form.Input
-            label={`index: ${index}`}
             min={0}
             max={99}
             name="index"
