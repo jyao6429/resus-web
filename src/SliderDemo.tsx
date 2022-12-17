@@ -2,6 +2,7 @@ import React, { ChangeEvent, Component, SyntheticEvent } from "react";
 import { DropdownProps, Form, Grid, Image, InputOnChangeData } from "semantic-ui-react";
 
 const pigs = [
+  4,
   7
 ]
 
@@ -24,11 +25,13 @@ export default class SliderDemo extends Component {
 
     return (
       <Grid centered columns={3}>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Image src={`${pig_path}/images/${index}.png`} centered />
+          <p>Sliced ultrasound image from reconstructed volume</p>
         </Grid.Column>
-        <Grid.Column as={Form}>
+        <Grid.Column textAlign="center" as={Form}>
           <Image src={`${pig_path}/label_recon.png`} alt={pig} centered />
+          <p>Top-down view of reconstructed label volume</p>
           <Form.Input
             min={0}
             max={99}
@@ -46,8 +49,9 @@ export default class SliderDemo extends Component {
             value={pig}
           />
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Image src={`${pig_path}/labels/${index}.png`} centered />
+          <p>Sliced label from reconstructed volume</p>
         </Grid.Column>
       </Grid>
     );
