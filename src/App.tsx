@@ -1,10 +1,14 @@
-import React from 'react';
-import './App.css';
-import SliderDemo from './SliderDemo';
+import React from "react";
+import "./App.css";
+import Navbar from "./Navbar";
+import SliderDemo from "./SliderDemo";
 
 function App() {
   return (
-    <SliderDemo />
+    <>
+      <Navbar />
+      <SliderDemo />
+    </>
   );
 }
 

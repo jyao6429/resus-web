@@ -11,7 +11,7 @@ export default class SliderDemo extends Component {
 
   render() {
     const { pig, index } = this.state;
-    const pig_path = `${process.env.PUBLIC_URL}/data/images/pig${pig}`
+    const pig_path = `${process.env.PUBLIC_URL}/data/images/pig${pig}`;
 
     return (
       <Grid centered columns={3}>
@@ -19,7 +19,7 @@ export default class SliderDemo extends Component {
           <ImageSlice folder={`${pig_path}/images`} index={index} />
         </Grid.Column>
         <Grid.Column as={Form}>
-          <Image src={`${pig_path}/label_recon.png`} alt={pig} centered/>
+          <Image src={`${pig_path}/label_recon.png`} alt={pig} centered />
           <Form.Input
             min={0}
             max={99}
