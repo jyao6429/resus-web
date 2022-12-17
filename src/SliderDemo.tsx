@@ -2,6 +2,7 @@ import React, { ChangeEvent, Component, SyntheticEvent } from "react";
 import { DropdownProps, Form, Grid, Image, InputOnChangeData } from "semantic-ui-react";
 
 const pigs = [
+  3,
   4,
   7
 ]
