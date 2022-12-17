@@ -1,12 +1,22 @@
-import React, { ChangeEvent, Component } from "react";
+import React, { ChangeEvent, Component, SyntheticEvent } from "react";
 import ImageSlice from "./ImageSlice";
-import { Form, Grid, Image, InputOnChangeData } from "semantic-ui-react";
+import { DropdownProps, Form, Grid, Image, InputOnChangeData } from "semantic-ui-react";
+
+const pigs = [
+  7
+]
+
+const options = pigs.map((p) => ({
+  key: p,
+  text: `Pig ${p}`,
+  value: p
+}))
 
 export default class SliderDemo extends Component {
   state = { pig: 7, index: 0 };
   handleChange = (
-    _e: ChangeEvent<HTMLInputElement>,
-    { name, value }: InputOnChangeData
+    _e: ChangeEvent<HTMLInputElement> | SyntheticEvent<HTMLElement, Event>,
+    { name, value }: InputOnChangeData | DropdownProps
   ) => this.setState({ [name]: value });
 
   render() {
@@ -28,6 +38,13 @@ export default class SliderDemo extends Component {
             step={1}
             type="range"
             value={index}
+          />
+          <Form.Dropdown
+            label="Select a pig reconstruction:"
+            name="pig"
+            onChange={this.handleChange}
+            options={options}
+            value={pig}
           />
         </Grid.Column>
         <Grid.Column>
