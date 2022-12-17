@@ -1,5 +1,4 @@
 import React, { ChangeEvent, Component, SyntheticEvent } from "react";
-import ImageSlice from "./ImageSlice";
 import { DropdownProps, Form, Grid, Image, InputOnChangeData } from "semantic-ui-react";
 
 const pigs = [
@@ -26,7 +25,7 @@ export default class SliderDemo extends Component {
     return (
       <Grid centered columns={3}>
         <Grid.Column>
-          <ImageSlice folder={`${pig_path}/images`} index={index} />
+          <Image src={`${pig_path}/images/${index}.png`} centered />
         </Grid.Column>
         <Grid.Column as={Form}>
           <Image src={`${pig_path}/label_recon.png`} alt={pig} centered />
@@ -40,7 +39,7 @@ export default class SliderDemo extends Component {
             value={index}
           />
           <Form.Dropdown
-            label="Select a pig reconstruction:"
+            label="Select a pig ultrasound reconstruction:"
             name="pig"
             onChange={this.handleChange}
             options={options}
@@ -48,7 +47,7 @@ export default class SliderDemo extends Component {
           />
         </Grid.Column>
         <Grid.Column>
-          <ImageSlice folder={`${pig_path}/labels`} index={index} />
+          <Image src={`${pig_path}/labels/${index}.png`} centered />
         </Grid.Column>
       </Grid>
     );
